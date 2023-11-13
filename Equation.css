@@ -1,0 +1,14 @@
+label, input
+{
+    font-size: 21px;
+}
+#btn
+{
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+#para
+{
+    font-size: 20px;
+}
