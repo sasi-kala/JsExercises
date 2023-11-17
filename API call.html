@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call</title>
+</head>
+<body>
+    <center><h1 style="color:rgb(77, 4, 77)">API Call</h1>  </center>
+    <h1 id="header"></h1>
+<br>
+    <center><h1 style="color:rgb(77, 4, 77)">Displaying Input</h1>  </center>
+   <h2 id="head"></h2>  
+   <h2 id="head1"></h2>
+   <h2 id="head2"></h2>
+   <h2 id="head3"></h2>
+
+
+   <script>
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET","https://reqres.in/api/users/2",true);
+    xhr.send();
+    
+    xhr.onload = function() {
+        const obj = JSON.parse(xhr.responseText);
+
+        document.getElementById("header").innerHTML = xhr.responseText;
+
+        document.getElementById("head").innerHTML = obj.data.first_name;
+
+        document.getElementById("head1").innerHTML = obj.data.email;
+
+        document.getElementById("head2").innerHTML = obj.data.last_name;
+
+        document.getElementById("head3").innerHTML = obj.support.url;
+
+    };
+ 
+   </script>
+</body>
+</html>
